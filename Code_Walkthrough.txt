@@ -1,0 +1,39 @@
+Lines 1-18: Importing the necessary packages and constructing the argument parser and parsing the arguments.
+	    --image : The path to the input image. We’ll detect objects in this image using YOLO.
+	    --confidence : Minimum probability to filter weak detections with a default value of 0.5, here.
+	    --threshold : Non-maxima suppression threshold with a default value of 0.3.
+
+Upto line 37: Loading labels and generation of colors followed by loading our YOLO model and determining output layer names.
+
+Upto 60: Opening a file pointer to the video file for reading frames in the loop.
+	 Initializing our video writer  and frame dimensions.
+	 Determining the total  number of frames in the video file so we can estimate how long processing the entire video will take.
+
+upto 74: Defining a while  loop to grab our first frame. 
+	 We check if it is the last frame of the video. If it is so, we need to break  from the while  loop.		
+	 Then, we grab the frame dimensions if they haven’t been grabbed yet.
+
+upto 90: Perform a forward pass of YOLO, using our current frame  as the input.
+	 We construct a blob  and pass it through the network, obtaining predictions. 
+	 We’ll then initialize boxes, confidences, and classIDs .
+	 boxes : Bounding boxes around the object.
+	 confidences : The confidence value that YOLO assigns to an object. 
+		       Lower confidence values indicate that the object might not be what the network thinks it is. 
+		       We’ll filter out objects that don’t meet the 0.5  threshold.
+	 classIDs : The detected object’s class label.
+
+Upto 122: Loop over output layers and detections.
+	  Extraction of the classID  and confidence 
+	  Filtering out weak predictions using the confidence.
+	  Then, we compute bounding box coordinates.
+	  Scale bounding box coordinates so we can display them properly on our original image (Line 110).
+	  Extract coordinates and dimensions of the bounding box (Line 111). 
+	  YOLO returns bounding box coordinates in the form: (centerX, centerY, width, and height).
+	  We use this information to derive the top-left (x, y)-coordinates of the bounding box (Lines 116,117).
+	  Then, we update the boxes , confidences , and classIDs  lists.
+
+Upto 143: Applying non-maxima suppression to suppress weak, overlapping bounding boxes.
+	  Loop over the idxs  calculated by NMS and draw the corresponding bounding boxes + labels.
+ 
+
+Displaying the output, finally!
