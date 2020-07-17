@@ -18,13 +18,3 @@ Input Dataset used for this project: Traffic Videos from the following links
 8. https://pixabay.com/videos/suspension-bridge-traffic-street-6408/ 
 9. https://pixabay.com/videos/traffic-road-bangkok-thailand-31967/ 
 10. https://pixabay.com/videos/india-crossroads-traffic-busy-road-8698/ 
-11. https://www.videvo.net/video/rue-de-rivoli/3712/ 
-12. https://youtube/fffD0j6Pw4c 
-13. https://youtube/0Cdboh4P6no 
-14. https://youtube/iAP8BbH4g3s 
-15. https://youtube/9SVKO0_jTAk 
-16. https://youtube/0Cdboh4P6no?t=109 
-17. https://youtube/9SVKO0_jTAk?t=43 
-18. https://youtube/D2KvUHFIVH0?t=206 
-19. https://youtube/9SVKO0_jTAk?t=77 
-20. https://youtube/D2KvUH
